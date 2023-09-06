@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 inactivity_timeout = 590  # Screen locks up after 10 minutes of inactivity, so run every 9 minutes and 50 seconds
-key_to_press = Key.ctrl_r
+key_to_press = Key.ctrl_r # Hopefully the key that could hypothetically cause the least harm
 last_activity_time = time.time()
 
 
@@ -20,8 +20,6 @@ def get_current_time():
 def log_activity(message):
     with open(f"Logs/keypress-log-{get_current_date()}.txt", "a") as log_file:
         log_file.write(message)
-
-    return None
 
 
 def on_mouse_move(x, y):
@@ -70,5 +68,5 @@ def main():
         time.sleep(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
